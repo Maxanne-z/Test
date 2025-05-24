@@ -1,12 +1,12 @@
 <template>
   <div>
-    数据报表管理
+      台账管理
   </div>
 </template>
 
 <script>
 export default {
-   name: "statement",
+    name:'ledger'
 
 }
 </script>

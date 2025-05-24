@@ -1,9 +1,6 @@
 <template>
   <div>
     <el-card>
-      <span class="centered-text">项目详情信息</span>
-    </el-card>
-    <el-card>
       <!-- 项目相关信息 -->
       <el-form :model="info" label-width="150px" class="form">
         <el-form-item label="单位工程名称">
@@ -59,32 +56,26 @@
         <el-table-column
           prop="time"
           label="时间节点"
-          width="300"
           align="center"
         >
         </el-table-column>
         <el-table-column
           prop="part"
           label="检验批工程部位"
-          width="500"
           align="center"
         >
         </el-table-column>
         <el-table-column
           prop="record"
           label="收集的检验批数据"
-          width="500"
           align="center"
         >
-        </el-table-column>
-        <el-table-column prop="prop" label="操作" align="center">
-          <el-button type="danger">删除</el-button>
         </el-table-column>
       </el-table>
       <!-- 保存按钮 -->
       <div style="margin-top: 10px">
-        <el-button type="primary" @click="addProject">保存</el-button>
-        <el-button @click="quxiao">取消</el-button>
+        <el-button type="primary" @click="success">通过</el-button>
+        <el-button type="danger" @click="fail">不通过</el-button>
       </div>
     </el-card>
   </div>
@@ -117,14 +108,14 @@ export default {
     };
   },
   methods: {
-    //保存项目
-    addProject() {
+    //通过
+    success() {
       const isShow = true;
       const data = { isShow };
       this.$emit("transmit", data);
     },
-    //取消按钮
-    quxiao() {
+    //不通过
+    fail() {
       const isShow = true;
       const data = { isShow };
       this.$emit("transmit", data);
