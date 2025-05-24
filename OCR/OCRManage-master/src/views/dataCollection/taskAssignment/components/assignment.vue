@@ -195,8 +195,7 @@
                 property="count"
                 label="采样部位"
                 width="220"
-                align="center"
-              >
+                align="center">
                 <template slot-scope="scope">
                       <el-input v-model="scope.row.part" placeholder="" style="width: 150px;"></el-input>
                     </template>
