@@ -2,16 +2,12 @@
 <div>
    <div style="display: flex; gap: 10px;"> 
       <span style="margin-right: 8px; margin-top: 10px;">单位工程：</span>
-      <!-- 数据 -->
       <div style="margin-right: 8px; margin-top: 10px;">{{ unitProjectName }}</div>
       <span style="margin-top: 10px;">检验批部位：</span>
-      <!-- 数据 -->
       <div style="margin-right: 8px; margin-top: 10px;">{{ inspectionBatchLocation }}</div>
       <span style="margin-top: 10px;">检验批名称：</span>
-      <!-- 数据 -->
       <div style="margin-right: 8px; margin-top: 10px;">{{ inspectionBatchName }}</div>
       <span style="margin-top: 10px;">检验批容量：</span>
-      <!-- 数据 -->
       <div style="margin-right: 8px; margin-top: 10px;">{{ inspectionBatchCapacity }}</div>
    </div>
   
