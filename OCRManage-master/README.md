@@ -1,5 +1,4 @@
 <<<<<<< HEAD
-<<<<<<< HEAD
 # vue-admin-template
 
 English | [简体中文](./README-zh.md)
@@ -103,7 +102,3 @@ Copyright (c) 2017-present PanJiaChen
 # OCRManage
 管理系统
 >>>>>>> ba66c7f30f3d87d7efbf6973e8bfe5873a2c2a55
-=======
-# Test
-项目
->>>>>>> a54b84a42a38f2ee6db1e3d3c4f387c4a19e563c
