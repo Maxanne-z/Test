@@ -70,7 +70,7 @@ const actions = {
         setToken(token)
         //获取用户信息
         const name = data.username
-        setUser(username,password)
+        setUser(username,password,data.userId)
         commit('SET_NAME', name)
         resolve()//表示 Promise 成功完成
       }).catch(error => {

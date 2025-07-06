@@ -81,25 +81,25 @@ export const constantRoutes = [
         redirect: '/menus/collection/collectionManage',
         component: () => import('@/views/dataCollection/taskAssignment'),
         meta: { title: '数据采集情况', icon: 'assign' },
-        children:[
-            {
-              path:'collectionManage',
-              name:'CollectionManage',
-              component: () => import('@/views/dataCollection/taskAssignment/components/collectionManage.vue'),
-              meta: { title: '数据采集情况管理', breadcrumb: false }
-            },
-            {
-              path:'assignment',
-              name:'Assignment',
-              component: () => import('@/views/dataCollection/taskAssignment/components/assignment.vue'),
-              meta: { title: '采集任务分发'}
-            },
-            {
-              path:'collectionDetail',
-              name:'CollectionDetail',
-              component: () => import('@/views/dataCollection/taskAssignment/components/collectionDetail.vue'),
-              meta: { title: '数据采集详情'}
-            }
+        children: [
+          {
+            path: 'collectionManage',
+            name: 'CollectionManage',
+            component: () => import('@/views/dataCollection/taskAssignment/components/collectionManage.vue'),
+            meta: { title: '数据采集情况管理', breadcrumb: false }
+          },
+          {
+            path: 'assignment',
+            name: 'Assignment',
+            component: () => import('@/views/dataCollection/taskAssignment/components/assignment.vue'),
+            meta: { title: '采集任务分发' }
+          },
+          {
+            path: 'collectionDetail',
+            name: 'CollectionDetail',
+            component: () => import('@/views/dataCollection/taskAssignment/components/collectionDetail.vue'),
+            meta: { title: '数据采集详情' }
+          }
 
         ]
       },
@@ -141,7 +141,7 @@ export const constantRoutes = [
             path: 'ocrManage',
             name: 'ocrManage',
             component: () => import('@/views/ocrTemplate/components/ocrManage.vue'),
-            meta: { title: 'OCR模版管理', icon: 'statement',breadcrumb: false  }
+            meta: { title: 'OCR模版管理', icon: 'statement', breadcrumb: false }
           },
           {
             path: 'ocrDetail',
@@ -155,7 +155,45 @@ export const constantRoutes = [
         path: 'ledger',
         name: 'Ledger',
         component: () => import('@/views/ledgerManage'),
-        meta: { title: '台账管理', icon: 'approve' }
+        meta: { title: '台账管理', icon: 'approve' },
+        children: [
+          {
+            path: 'rawMaterial',
+            name: 'RawMaterial',
+            component: () => import('@/views/ledgerManage/rawMaterial.vue'),
+            meta: { title: '钢筋原材', breadcrumb: false },
+          },
+          {
+            path: 'connection',
+            name: 'Connection',
+            component: () => import('@/views/ledgerManage/connection.vue'),
+            meta: { title: '钢筋机械连接' }
+          },
+          {
+            path: 'weld',
+            name: 'Weld',
+            component: () => import('@/views/ledgerManage/weld.vue'),
+            meta: { title: '钢筋焊接' }
+          },
+          {
+            path: 'beton',
+            name: 'Beton',
+            component: () => import('@/views/ledgerManage/beton.vue'),
+            meta: { title: '混凝土强度' }
+          },
+          {
+            path: 'ledgerEntry/:type',
+            name: 'LedgerEntry',
+            component: () => import('@/views/ledgerManage/ledgerEntry.vue'),
+            meta: { title: '台账录入' }
+          },
+          {
+            path: 'OCREntry/:type',
+            name: 'OCREntry',
+            component: () => import('@/views/ledgerManage/OCREntry.vue'),
+            meta: { title: 'OCR数据录入' }
+          },
+        ]
       },
       {
         path: 'statement',

@@ -79,7 +79,7 @@
       align="center">
       <template slot-scope="scope">
         <el-button type="primary" @click="dialogTableVisible = true">查看数据</el-button>
-        <el-dialog title="原始数据展示" :visible.sync="dialogTableVisible">
+        <el-dialog title="原始数据展示" :visible.sync="dialogTableVisible" :show-close="false">
         <el-table :data="gridData">
           <el-table-column property="position" label="采集部位" width="220" align="center">
           </el-table-column>

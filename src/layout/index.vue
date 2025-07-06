@@ -68,7 +68,7 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
-  overflow: hidden; /* 禁止全局滚动 */
+  // overflow: hidden; /* 禁止全局滚动 */
   &.mobile.openSidebar {
     position: fixed;
     top: 0;
@@ -111,6 +111,7 @@ export default {
   }
 }
 .app-main-wrapper {
+  height:calc(100vh-100px);//减去navbar
   overflow-y: auto; /* 允许滚动 */
 }
 
