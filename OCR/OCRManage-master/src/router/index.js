@@ -57,6 +57,30 @@ export const constantRoutes = [
     }]
   },
   {
+    path: '/notify',
+    component: Layout,
+    children: [
+      {
+        path: 'notice',
+        name: 'Notify',
+        component: () => import('@/views/messageNotice/index'), // 需要创建对应组件
+        meta: { title: '消息通知', icon: 'el-icon-chat-dot-square' }
+      }
+    ]
+  },
+  {
+    path: '/system',
+    component: Layout,
+    children: [
+      {
+        path: 'systemSetting',
+        name: 'SystemSetting',
+        component: () => import('@/views/systemSetting/index'), // 需要创建对应组件
+        meta: { title: '系统设置', icon: 'el-icon-setting' }
+      }
+    ]
+  },
+  {
     path: '/menus',
     component: Layout,
     redirect: '/dashboard',
@@ -66,8 +90,30 @@ export const constantRoutes = [
       {
         path: 'inspection',
         name: 'Inspection',
+        redirect: '/menus/inspection/batchesManage',
         component: () => import('@/views/inspectionBatch'),
-        meta: { title: '验收规范管理', icon: 'batch' }
+        meta: { title: '验收规范管理', icon: 'batch' },
+        children: [
+          {
+            path: 'batchesManage',
+            name: 'BatchesManage',
+            component: () => import('@/views/inspectionBatch/components/batchesManage.vue'),
+            meta: { title: '验收规范管理', breadcrumb: false }
+
+          },
+          {
+            path: 'batchDetailBuilt',
+            name: 'BatchDetailBuilt',
+            component: () => import('@/views/inspectionBatch/components/batchDetail_Built.vue'),
+            meta: { title: '新建验收规范' }
+          },
+          {
+            path: 'batchDetailEdit',
+            name: 'BatchDetailEdit',
+            component: () => import('@/views/inspectionBatch/components/batchDetail_Edit.vue'),
+            meta: { title: '编辑验收规范' }
+          }
+        ]
       },
       {
         path: 'task',
@@ -81,25 +127,31 @@ export const constantRoutes = [
         redirect: '/menus/collection/collectionManage',
         component: () => import('@/views/dataCollection/taskAssignment'),
         meta: { title: '数据采集情况', icon: 'assign' },
-        children:[
-            {
-              path:'collectionManage',
-              name:'CollectionManage',
-              component: () => import('@/views/dataCollection/taskAssignment/components/collectionManage.vue'),
-              meta: { title: '数据采集情况管理', breadcrumb: false }
-            },
-            {
-              path:'assignment',
-              name:'Assignment',
-              component: () => import('@/views/dataCollection/taskAssignment/components/assignment.vue'),
-              meta: { title: '采集任务分发'}
-            },
-            {
-              path:'collectionDetail',
-              name:'CollectionDetail',
-              component: () => import('@/views/dataCollection/taskAssignment/components/collectionDetail.vue'),
-              meta: { title: '数据采集详情'}
-            }
+        children: [
+          {
+            path: 'collectionManage',
+            name: 'CollectionManage',
+            component: () => import('@/views/dataCollection/taskAssignment/components/collectionManage.vue'),
+            meta: { title: '数据采集情况管理', breadcrumb: false }
+          },
+          {
+            path: 'assignment',
+            name: 'Assignment',
+            component: () => import('@/views/dataCollection/taskAssignment/components/assignment.vue'),
+            meta: { title: '采集任务分发' }
+          },
+          {
+            path: 'collectionDetail',
+            name: 'CollectionDetail',
+            component: () => import('@/views/dataCollection/taskAssignment/components/collectionDetail.vue'),
+            meta: { title: '数据采集详情' }
+          },
+          {
+            path: 'collectionDetailApproval',
+            name: 'CollectionDetailApproval',
+            component: () => import('@/views/dataCollection/taskAssignment/components/collectionDetail_Approval.vue'),
+            meta: { title: '项目审核' }
+          }
 
         ]
       },
@@ -141,7 +193,7 @@ export const constantRoutes = [
             path: 'ocrManage',
             name: 'ocrManage',
             component: () => import('@/views/ocrTemplate/components/ocrManage.vue'),
-            meta: { title: 'OCR模版管理', icon: 'statement',breadcrumb: false  }
+            meta: { title: 'OCR模版管理', icon: 'statement', breadcrumb: false }
           },
           {
             path: 'ocrDetail',
@@ -155,7 +207,9 @@ export const constantRoutes = [
         path: 'ledger',
         name: 'Ledger',
         component: () => import('@/views/ledgerManage'),
-        meta: { title: '台账管理', icon: 'approve' }
+        meta: { title: '台账管理', icon: 'approve' },
+        children: [
+        ]
       },
       {
         path: 'statement',
@@ -176,7 +230,7 @@ export const constantRoutes = [
         meta: { title: '角色管理', icon: 'el-icon-lock' }
       }
     ]
-  }
+  },
   // { path: '*', redirect: '/404', hidden: true }
 ]
 // 异步路由

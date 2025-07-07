@@ -1,11 +1,12 @@
 <template>
   <div>
-    <router-view />
+      消息通知
   </div>
 </template>
 
 <script>
 export default {
+
 }
 </script>
 
